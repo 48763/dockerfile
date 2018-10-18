@@ -1,3 +1,3 @@
 #!/bin/bash 
 
-echo "something"
+echo "Jenkins so hard."
