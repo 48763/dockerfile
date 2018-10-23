@@ -1,4 +1,3 @@
 #!/bin/bash 
 
-echo "Jenkins so hard."
-docker -v 
+docker build -t nginx . -f nginx.dockerfile
