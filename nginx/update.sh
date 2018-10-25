@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DOCKER_IMAGE_NAME=$1
-cd DOCKER_IMAGE_NAME
+cd DOCKER_IMAGE_NAME/operations
 
 DOCKER_IMAGE_CUR_VERSION="$(grep CUR_VERSION .env.info  | sed -r 's!CUR_VERSION=(.*)!\1!')"
 DOCKER_IMAGE_NEXT_VERSION="$(grep NEXT_VERSION .env.info  | sed -r 's!NEXT_VERSION=(.*)!\1!')"
