@@ -1,12 +1,3 @@
-docker run --name $1 -v /var/log/$1:/var/log/$1 \
+docker run --name nginx -v /var/log/nginx:/var/log/nginx \
         -p 80:80 \
-        -p 84:84 \
-        -p 85:85 \
-        -p 1000:1000 \
-        -p 10080:10080 \
-        -p 10180:10180 \
-        -p 10280:10280 \
-        -p 10380:10380 \
-        -p 10580:10580 \
-        -p 29900:29900 \
-        -i -t -d $1:$2
+        -it -d nginx:$version
