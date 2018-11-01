@@ -1,4 +1,4 @@
-DOCKER_CONTAINER_HASH=docker ps -a -f "name=nginx" -q
+DOCKER_CONTAINER_HASH=$(docker ps -a -f "name=nginx" -q)
 
 docker stop DOCKER_CONTAINER_HASH
 docker rm DOCKER_CONTAINER_HASH
