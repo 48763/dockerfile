@@ -16,10 +16,14 @@ DOMAIN="lab.yukifans.com"
 PROJECT="jenkins"
 
 echo """
+cd operations
+
 docker build -t $DOMAIN/$PROJECT/$DOCKER_IMAGE_NAME:$DOCKER_IMAGE_NEXT_VERSION . -q
 
 DOCKER_IMAGE_NEXT_HASH=\"docker images -q $DOMAIN/$PROJECT/$DOCKER_IMAGE_NAME:$DOCKER_IMAGE_NEXT_VERSION\"
 \$DOCKER_IMAGE_NEXT_HASH
-""" > build.sh
+
+sed -ri -e 's/^(.*\/jenkins\/nginx:).*/\1'$DOCKER_IMAGE_NEXT_VERSION'/' run.sh
+""" > ../build.sh
 
 sed -ri -e 's/^(CUR_VERSION=).*/\1'"$DOCKER_IMAGE_NEXT_VERSION"'/' .env.info 
